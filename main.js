@@ -37,13 +37,18 @@ class Student {
 class BudgetStudent extends Student {
    constructor(university, course, fullName) {
       super(university, course, fullName)
-      this.avarageMark = this.getAverageMark();
-      this.bolean = this.bolean
+
       this.getScholarship = function getScholarship() {
-         if (this.avarageMark >= 4 && !this.bolean) {
-            return 'Ви отримали 1400 грн. стипендії';
-         } else
-            return 'Ви не отримали 1400 грн. стипендії';
+         this.avarageMark = this.getAverageMark();
+         this.bolean = this.bolean;
+         setInterval(() => {
+            if (this.avarageMark >= 4 && !this.bolean) {
+               console.log('Ви отримали 1400 грн. стипендії');
+            } else {
+               console.log('Ви не отримали 1400 грн. стипендії');
+            }
+
+         }, 10_000)
       }
    }
 }
@@ -56,6 +61,4 @@ yaroslav.dismiss();
 console.log(yaroslav.marks)
 yaroslav.recover();
 console.log(yaroslav.marks)
-console.log(yaroslav.getScholarship())
-yaroslav.dismiss();
-console.log(yaroslav.getScholarship())
+yaroslav.getScholarship()
