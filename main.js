@@ -48,7 +48,7 @@ class BudgetStudent extends Student {
                console.log('Ви не отримали 1400 грн. стипендії');
             }
 
-         }, 10_000)
+         }, 30_000)
       }
    }
 }
